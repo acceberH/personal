@@ -3,19 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUSH-like Website</title>
+    <title>Rebecca's C</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
 </head>
 <body>
     <div class="navbar">
-        <a href="#">Work</a>
-        <a href="#">Approach</a>
-        <a href="#">People</a>
-        <a href="#">About</a>
-        <a href="#">Cont--act</a>
+        
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <a href="work.html">Work</a>
+            <div class="dropdown-content">
+                <a href="project.html">Projects</a>
+                <a href="reading.html">Readings</a>
+            </div>
+        </div> 
+        
     </div>
-    <h1 class="title">HUSH</h1>
+    
+    <div class="main-content">
+        <h1 class="title">"Shhhh"</h1>
+        <h2 class="rebecca-description"> 
+            Hi there! My name is Qiongran Huang. It's not Chi(squared)iongran or Kiongran. Rebecca is just "fake" a name I chose for starbucks pickup or take attendance. I can be Rebeckah/Rebeca/Rebecca/Rebeka.
+        </h2>
+        <div class="face">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+        <iframe class="spotify-player" src="https://open.spotify.com/embed/track/1NZs6n6hl8UuMaX0UC0YTz?utm_source=generator" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    
+
+    
+    
+
+    
     <div class="cursor"></div>
+</div>
+
+    
 </body>
+<script>
+    document.querySelector('body').addEventListener('mousemove', eyeball)
+    function eyeball(){
+        let eyes = document.querySelectorAll('.eye')
+        eyes.forEach(eye=>{
+            let x = (eye.getBoundingClientRect().left) +(eye.clientWidth/2)
+            let y = (eye.getBoundingClientRect().top) +(eye.clientHeight/2)
+            let radian = Math.atan2(event.pageX - x, event.pageY - y)
+            let rot = (radian*(180/Math.PI)* -1) + 270
+            eye.style.transform = `rotate(${rot}deg)`
+        })
+    }
+</script>
+
 </html>
+
